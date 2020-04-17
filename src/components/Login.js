@@ -3,6 +3,8 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import './Login.css'; 
+import './Test.js';
+import Test from './Test.js';
 
 
 const firebaseConfig = {
@@ -61,11 +63,13 @@ class Login extends Component {
     }
     return (
       <div className="container">
-        <h1>FirebaseUI-React</h1>
+        {/* <h1>FirebaseUI-React</h1>
         <h1> with Firebase Authentication</h1>
-        <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p>
-          <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/>
-        <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
+        <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p> */}
+          {/* <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/> */}
+          <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
+        <Test />
+        
       </div>
     );
   }
