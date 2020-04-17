@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 import './Login.css'; 
 import './Test.js';
-import Test from './Test.js';
+import Home from './Home';
+import Activity from './Activity';
+import About from './About';
 
 
 const firebaseConfig = {
@@ -67,9 +70,16 @@ class Login extends Component {
         <h1> with Firebase Authentication</h1>
         <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p> */}
           {/* <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/> */}
-          <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
-        <Test />
+          {/* <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
+        <Test /> */}
+         <Router>
         
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/activity" component={Activity} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </Router>
       </div>
     );
   }

@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 
-const Test = () => {
+const About = () => {
+
     return (
         <div>
-            <div>
+            55
             <a href=""><button >Home</button></a>
             <a href="/about"><button >About</button></a>
             <a href="/activity"><button >Activity</button></a>
-            </div>
         </div>
-    )
+    );
+
 }
 
-export default Test;
+export default About;
