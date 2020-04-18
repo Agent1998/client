@@ -75,9 +75,15 @@ class Login extends Component {
          <Router>
         
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/activity" component={Activity} />
-          <Route path="/about" component={About} />
+          <Route exact path="/">
+            <Home/>
+          </Route>
+          <Route path="/activity">
+            <Activity/>
+          </Route>
+          <Route path="/about">
+            <About/>
+          </Route>
         </Switch>
       </Router>
       </div>
