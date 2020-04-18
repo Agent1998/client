@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { BrowserRouter as  Switch, Route, } from "react-router-dom";
-import './Login.css'; 
-import './Test.js';
+import { BrowserRouter as Switch, Route, } from "react-router-dom";
+import './Login.css';
 import Home from './Home';
 import Activity from './Activity';
 import About from './About';
@@ -12,14 +11,14 @@ import Topbar from './Topbar';
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDSiIqcTkyBmwkCWni3M8AAuAATNdmFPS0",
-    authDomain: "miniproject-126e1.firebaseapp.com",
-    databaseURL: "https://miniproject-126e1.firebaseio.com",
-    projectId: "miniproject-126e1",
-    storageBucket: "miniproject-126e1.appspot.com",
-    messagingSenderId: "514535751787",
-    appId: "1:514535751787:web:0c9b623bafdc18cbd2b12e",
-    measurementId: "G-C9SP5QGVE8"
+  apiKey: "AIzaSyDSiIqcTkyBmwkCWni3M8AAuAATNdmFPS0",
+  authDomain: "miniproject-126e1.firebaseapp.com",
+  databaseURL: "https://miniproject-126e1.firebaseio.com",
+  projectId: "miniproject-126e1",
+  storageBucket: "miniproject-126e1.appspot.com",
+  messagingSenderId: "514535751787",
+  appId: "1:514535751787:web:0c9b623bafdc18cbd2b12e",
+  measurementId: "G-C9SP5QGVE8"
 };
 
 
@@ -28,7 +27,7 @@ firebase.initializeApp(firebaseConfig);
 class Login extends Component {
 
   state = {
-    isSignedIn: false 
+    isSignedIn: false
   };
 
   uiConfig = {
@@ -45,10 +44,10 @@ class Login extends Component {
   };
   componentDidMount() {
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
-        (user) => this.setState({isSignedIn: !!user})
+      (user) => this.setState({ isSignedIn: !!user })
     );
   }
-  
+
   componentWillUnmount() {
     this.unregisterAuthObserver();
   }
@@ -61,7 +60,7 @@ class Login extends Component {
           <h1> with FB Google E-mail</h1>
 
           <p>Please sign-in:</p>
-          <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
+          <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />
         </div>
       );
     }
@@ -70,23 +69,21 @@ class Login extends Component {
         {/* <h1>FirebaseUI-React</h1>
         <h1> with Firebase Authentication</h1>
         <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p> */}
-          {/* <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/> */}
-          {/* <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
+        {/* <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/> */}
+        {/* <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
         <Test /> */}
-         
-        <Topbar/>
+
+        <Topbar />
         <Switch>
           <Route exact path="/">
-           <Home/>
+            <Home />
           </Route>
-          <Route path="/activity">
-            <Activity/>
-          </Route>
+          <Route path="/activity" component={Activity} />
           <Route path="/about">
-            <About/>
+            <About />
           </Route>
         </Switch>
-        
+
       </div>
     );
   }
