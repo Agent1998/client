@@ -7,7 +7,7 @@ import './Login.css';
 import Home from './Home';
 import Activity from './Activity';
 import About from './About';
-import Topbar from './Topbar';
+import Topbar2 from './Topbar2';
 
 
 const firebaseConfig = {
@@ -73,13 +73,13 @@ class Login extends Component {
         {/* <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
         <Test /> */}
 
-        <Topbar />
+        <Topbar2 />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/Home">
             <Home />
           </Route>
-          <Route path="/activity" component={Activity} />
-          <Route path="/about">
+          <Route path="/Activity" component={Activity} />
+          <Route path="/About">
             <About />
           </Route>
         </Switch>

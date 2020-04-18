@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Switch, Route,Link } from "react-router-dom";
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -47,10 +48,9 @@ export default function Topbar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'About', 'Activity', 'Signout'].map((text, index) => (
+        {['Home', 'About', 'Activity'].map((text, index) => (
           <ListItem button key={text}>
-            
-            <ListItemText primary={text} />
+           <a href={text}><ListItemText primary={text} /></a>
           </ListItem>
         ))}
       </List>
