@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import { BrowserRouter as  Switch, Route, } from "react-router-dom";
 import './Login.css'; 
 import './Test.js';
 import Home from './Home';
@@ -72,11 +72,11 @@ class Login extends Component {
           {/* <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/> */}
           {/* <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
         <Test /> */}
-         <Router>
+         
         
         <Switch>
           <Route exact path="/">
-            <Home/>
+           <Home/>
           </Route>
           <Route path="/activity">
             <Activity/>
@@ -85,7 +85,7 @@ class Login extends Component {
             <About/>
           </Route>
         </Switch>
-      </Router>
+      
       </div>
     );
   }
