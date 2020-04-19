@@ -17,11 +17,8 @@ const Topbar2 = () => {
                 <Nav className="mr-auto">
                     <Nav.Link href="/activity">Activity</Nav.Link>
                     <Nav.Link href="/about">About</Nav.Link>
-                    {/* <Form inline> */}
-                    <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/>
-            <Nav.Link onClick={() => firebase.auth().signOut() } href="/">Signout
-            </Nav.Link>
-          {/* </Form> */}
+                    {/* <img  className="pic" src={firebase.auth().currentUser.photoURL}/> */}
+            <Nav.Link onClick={() => firebase.auth().signOut() } href="/">Signout</Nav.Link>
                 </Nav>
                 </Form>
                 </div> 
