@@ -3,14 +3,33 @@ import 'firebase/auth';
 import firebase from 'firebase'
 import Topbar from './Topbar';
 import './Topbar.css'
+import { Nav, Navbar, Button, Form, FormControl } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Topbar2 = () => {
 
     return (
-        <div className = 'Topbar'>
-           <div className="btn-topbar"><Topbar/></div> 
-           <div className="btn-signout"><button onClick={() => firebase.auth().signOut()}>Sign-out</button></div>
+        <div >
+            <Navbar bg="dark" variant="dark">
+               <div className = "btn-topbar">
+            <Form inline>
+                <Navbar.Brand href="/home">Home</Navbar.Brand>
+                <Nav className="mr-auto">
+                    <Nav.Link href="/activity">Activity</Nav.Link>
+                    <Nav.Link href="/about">About</Nav.Link>
+                    {/* <Form inline> */}
+                    {/* <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/> */}
+            <Nav.Link onClick={() => firebase.auth().signOut() } href="/">Signout
+            </Nav.Link>
+          {/* </Form> */}
+                </Nav>
+                </Form>
+                </div> 
+            </Navbar>
         </div>
+           
+        
     );
 
 }

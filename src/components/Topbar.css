@@ -9,8 +9,13 @@
 
 }
 .btn-topbar{
-    margin-left: 10px;
+    margin-left: 82%;
 }
 .btn-signout{
     margin-right: 10px;
+}
+.pic{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
 }

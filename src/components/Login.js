@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { BrowserRouter as Switch, Route, } from "react-router-dom";
+
 import './Login.css';
-import Home from './Home';
-import Activity from './Activity';
-import About from './About';
+
 import Topbar2 from './Topbar2';
+import Home from './Home';
 
 
 const firebaseConfig = {
@@ -55,7 +54,7 @@ class Login extends Component {
   render() {
     if (!this.state.isSignedIn) {
       return (
-        <div className="container">
+        <div>
           <h1>Login</h1>
           <h1> with FB Google E-mail</h1>
 
@@ -65,7 +64,7 @@ class Login extends Component {
       );
     }
     return (
-      <div className="container">
+      <div>
         {/* <h1>FirebaseUI-React</h1>
         <h1> with Firebase Authentication</h1>
         <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p> */}
@@ -73,16 +72,8 @@ class Login extends Component {
         {/* <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
         <Test /> */}
 
-        <Topbar2 />
-        <Switch>
-          <Route exact path="/Home">
-            <Home />
-          </Route>
-          <Route path="/Activity" component={Activity} />
-          <Route path="/About">
-            <About />
-          </Route>
-        </Switch>
+        <Home/>
+       
 
       </div>
     );
