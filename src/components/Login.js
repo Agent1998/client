@@ -5,20 +5,21 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 import './Login.css';
 
-import Topbar2 from './Topbar2';
 import Home from './Home';
+import Test from './Test';
+import firebaseConfig from '../config'
 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDSiIqcTkyBmwkCWni3M8AAuAATNdmFPS0",
-  authDomain: "miniproject-126e1.firebaseapp.com",
-  databaseURL: "https://miniproject-126e1.firebaseio.com",
-  projectId: "miniproject-126e1",
-  storageBucket: "miniproject-126e1.appspot.com",
-  messagingSenderId: "514535751787",
-  appId: "1:514535751787:web:0c9b623bafdc18cbd2b12e",
-  measurementId: "G-C9SP5QGVE8"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDSiIqcTkyBmwkCWni3M8AAuAATNdmFPS0",
+//   authDomain: "miniproject-126e1.firebaseapp.com",
+//   databaseURL: "https://miniproject-126e1.firebaseio.com",
+//   projectId: "miniproject-126e1",
+//   storageBucket: "miniproject-126e1.appspot.com",
+//   messagingSenderId: "514535751787",
+//   appId: "1:514535751787:web:0c9b623bafdc18cbd2b12e",
+//   measurementId: "G-C9SP5QGVE8"
+// };
 
 
 firebase.initializeApp(firebaseConfig);
@@ -71,8 +72,8 @@ class Login extends Component {
         {/* <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/> */}
         {/* <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
         <Test /> */}
-
-        <Home/>
+        {firebase.auth().currentUser.email === "msurapit@gmail.com" ?<Test/>:<Home/>}
+        
        
 
       </div>
