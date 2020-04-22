@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Tournament from './components/Tournament';
 import Other from './components/Other';
 import Test from './components/Test';
+import OtherAdd from './components/OtherAdd';
 
 class App extends Component {
   render() {
@@ -16,8 +17,9 @@ class App extends Component {
           <Route exact path="/" component={Login} /> 
           <Route exact path="/home" component={Home} />
           <Route path="/tournament" component={Tournament} />
-          <Route path="/Other" component={Other} />
+          <Route path="/other" component={Other} />
           <Route path="/test" component={Test}/>
+          <Route path="/otheradd" component={OtherAdd}/>
         </Switch>
       </div>
     )
