@@ -4,3 +4,17 @@
     align-items: flex-start;
 
 }
+.text{
+    display: flex;
+    align-items: flex-start;
+}
+.discard{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center
+}
+.center{
+    display: flex;
+    justify-content: center;
+}

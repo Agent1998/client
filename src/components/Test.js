@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Card, Form, } from 'react-bootstrap';
 import {firestore} from '../index';
 import './Datatour.css'
+import TopbarAdd from './TopbarAdd';
 
 
 
@@ -32,9 +33,7 @@ const Test = () => {
   const deleteTour = (id) => {
     firestore.collection("tour").doc(id + '').delete()
   }
-  const editTour = (id) => {
-    firestore.collection("tour").doc(id + '').set({ id, name, date, place,link})
-  }
+  
   const rederTour = () => {
     if (tour && tour.length)
       return tour.map((tour, index) => {
@@ -42,21 +41,21 @@ const Test = () => {
           <div class="d-flex justify-content-center">
           <>
           
-            <Card style={{ width: '18rem', marginTop: 10 }}>
+            <Card style={{ width: '25rem', marginTop: 10 }}>
               
               <Card.Body>
-                <Card.Title> รายการ : {tour.name}</Card.Title>
-                <Card.Text>
+                <Card.Title className ="text"> รายการ : {tour.name}</Card.Title>
+                <Card.Text className ="text">
                   วันที่ : {tour.date}
                 </Card.Text>
-                <Card.Text>
+                <Card.Text className ="text">
                   สถานที่ : {tour.place}
                 </Card.Text>
-                <Card.Text>
+                <Card.Text className ="text">
                   รายละเอียดเพิ่มเติม : {tour.link} 
                 </Card.Text>
                 <Button variant="danger" onClick={() => deleteTour(tour.id)}>Delete</Button>
-                <Button variant="warning" style={{ marginLeft: 10 }} onClick={() => editTour(tour.id)}>Edit</Button>
+                
               </Card.Body>
             </Card>
 
@@ -73,14 +72,14 @@ const Test = () => {
     firestore.collection("tour").doc(id + '').set({ id, name, date, place,link })
   }
   return (
-    
-       
-      <div style={{ display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',marginTop: 150 }}>
+    <>
+      <TopbarAdd/> 
+      <div >
         <h1>รายกานแข่งขัน</h1>
         
-        <Form >
+        <Form className ="center">
           <Form.Group controlId="formGroupName">
-            <Form.Label>ชื่อรายการ</Form.Label>
+            <Form.Label className ="text">ชื่อรายการ</Form.Label>
             <Form.Control
               type="text"
               placeholder="รายการ" value={name}
@@ -88,8 +87,8 @@ const Test = () => {
               style={{ width: 300 }}
             />
           </Form.Group>
-          <Form.Group controlId="formGroupImage">
-            <Form.Label>วันที่</Form.Label>
+          <Form.Group controlId="formGroupDate">
+            <Form.Label className ="text">วันที่</Form.Label>
             <Form.Control type="text"
               placeholder="วันที่"
               value={date}
@@ -98,7 +97,7 @@ const Test = () => {
             />
           </Form.Group>
           <Form.Group controlId="formGroupPrice">
-            <Form.Label>สถานที่จัดการแข่งขัน</Form.Label>
+            <Form.Label className ="text">สถานที่จัดการแข่งขัน</Form.Label>
             <Form.Control type="text"
               placeholder="สถานที่" value={place}
               onChange={(e) => { setPlace(e.target.value) }}
@@ -106,7 +105,7 @@ const Test = () => {
             />
           </Form.Group>
           <Form.Group controlId="formGroupDetail">
-            <Form.Label>รายละเอียดเพิ่มเติม</Form.Label>
+            <Form.Label className ="text">รายละเอียดเพิ่มเติม</Form.Label>
             <Form.Control type="text"
               placeholder="URL" value={link}
               onChange={(e) => { setLink(e.target.value) }}
@@ -115,11 +114,11 @@ const Test = () => {
           </Form.Group>
           
         </Form>
-        <Button variant="success" style={{ margin: 5, alignContent: 'center' }} onClick={addTour}>Add</Button>
-        <ul style={{ display: 'flex', flex: 1, flexDirection: 'row'}}>{rederTour()}</ul>
+        <Button variant="primary" style={{ margin: 5, alignContent: 'center' }} onClick={addTour}>Add</Button>
+        <ul className="discard">{rederTour()}</ul>
         
       </div>
-      
+      </>  
   );
 }
 

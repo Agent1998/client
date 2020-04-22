@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import 'firebase/auth';
 import Topbar2 from './Topbar2';
@@ -8,6 +8,7 @@ import './Home.css'
 const Home = () => {
   return (
     <div>
+      
       <Topbar2/>
      
     <div className="pic">
