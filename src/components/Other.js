@@ -42,10 +42,10 @@ const Other = () => {
                 เนื้อหาโดยรวม : {info.data}
               </Card.Text>
               
-              <Card.Text className ="text">
+              {/* <Card.Text className ="text">
                 รายละเอียดเพิ่มเติม : {info.link} 
-              </Card.Text>
-             
+              </Card.Text> */}
+             <a href={info.link} class="btn btn-info">อ่านต่อ</a>
             </Card.Body>
           </Card>
 

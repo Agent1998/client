@@ -45,10 +45,10 @@ const Tournament = () => {
               <Card.Text className ="text">
                 สถานที่ : {tour.place}
               </Card.Text>
-              <Card.Text className ="text">
+              {/* <Card.Text className ="text">
                 รายละเอียดเพิ่มเติม : {tour.link} 
-              </Card.Text>
-             
+              </Card.Text> */}
+              <a href={tour.link} class="btn btn-info" >รายละเอียดเพิ่มเติม</a>
             </Card.Body>
           </Card>
 

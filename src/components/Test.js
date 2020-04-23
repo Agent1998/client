@@ -54,6 +54,7 @@ const Test = () => {
                 <Card.Text className ="text">
                   รายละเอียดเพิ่มเติม : {tour.link} 
                 </Card.Text>
+               
                 <Button variant="danger" onClick={() => deleteTour(tour.id)}>Delete</Button>
                 
               </Card.Body>

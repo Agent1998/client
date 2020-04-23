@@ -14,6 +14,7 @@ const OtherAdd = () => {
     const [data,setData] = useState('')
     const [link,setLink] = useState('')
     const [head,setHead] = useState('')
+  
 
 
   useEffect(() => {
@@ -47,6 +48,7 @@ const OtherAdd = () => {
               <Card.Header className ="text">
                   หัวข้อข่าว : {info.head}
                   </Card.Header>
+            
               <Card.Text className ="text">
                 เนื้อหาโดยรวม : {info.data}
               </Card.Text>
@@ -88,6 +90,7 @@ const OtherAdd = () => {
               style={{ width: 300 }}
             />
           </Form.Group>
+         
           <Form.Group controlId="formGroupDate">
             <Form.Label className ="text">เนื้อข่าวโดยสรุป</Form.Label>
             <Form.Control type="text"
