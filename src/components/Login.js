@@ -56,10 +56,10 @@ class Login extends Component {
     if (!this.state.isSignedIn) {
       return (
         <div>
-          <h1>Login</h1>
-          <h1> with FB Google E-mail</h1>
+          <h1>PETANQUE CLUB</h1>
+          <h1> Please Login</h1>
 
-          <p>Please sign-in:</p>
+          
           <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />
         </div>
       );

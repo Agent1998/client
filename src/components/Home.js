@@ -3,7 +3,7 @@ import React from 'react';
 import 'firebase/auth';
 import Topbar2 from './Topbar2';
 import './Home.css'
-import Footer from './Footer';
+
 
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
       </a>
     </div>
   
-      <Footer/>
+      
     </div>
 
   );
