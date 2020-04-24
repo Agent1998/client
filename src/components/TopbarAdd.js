@@ -15,7 +15,7 @@ const TopbarAdd = () => {
             <Form inline>
                 {/* <Navbar.Brand href="/home">Home</Navbar.Brand> */}
                 <Nav className="mr-auto">
-                    <Nav.Link href="/test">Test</Nav.Link>
+                    <Nav.Link href="/datatour">DataTour</Nav.Link>
                     <Nav.Link href="/otheradd">OtherAdd</Nav.Link>
                     {/* <img  className="pic" src={firebase.auth().currentUser.photoURL}/> */}
             <Nav.Link onClick={() => firebase.auth().signOut() } href="/">Signout</Nav.Link>

@@ -65,6 +65,7 @@ const Other = () => {
         
         
         <ul className="discard">{rederInfo()}</ul>
+        
       </div>
     </>
   );

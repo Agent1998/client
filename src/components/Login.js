@@ -6,7 +6,7 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import './Login.css';
 
 import Home from './Home';
-import Test from './Test';
+import DataTour from './DataTour';
 import firebaseConfig from '../config'
 
 
@@ -72,7 +72,7 @@ class Login extends Component {
         {/* <img id="photo" className="pic" src={firebase.auth().currentUser.photoURL}/> */}
         {/* <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
         <Test /> */}
-        {firebase.auth().currentUser.email === "msurapit@gmail.com" ?<Test/>:<Home/>}
+        {firebase.auth().currentUser.email === "msurapit@gmail.com" ?<DataTour/>:<Home/>}
         
        
 

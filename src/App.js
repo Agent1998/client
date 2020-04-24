@@ -5,7 +5,7 @@ import { BrowserRouter as Switch, Route } from "react-router-dom";
 import Home from './components/Home';
 import Tournament from './components/Tournament';
 import Other from './components/Other';
-import Test from './components/Test';
+import DataTour from './components/DataTour';
 import OtherAdd from './components/OtherAdd';
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
           <Route exact path="/home" component={Home} />
           <Route path="/tournament" component={Tournament} />
           <Route path="/other" component={Other} />
-          <Route path="/test" component={Test}/>
+          <Route path="/datatour" component={DataTour}/>
           <Route path="/otheradd" component={OtherAdd}/>
         </Switch>
       </div>

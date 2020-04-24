@@ -1,0 +1,12 @@
+
+.bd-footer {
+    text-align: left;
+}
+.text-muted {
+    color: rgb(255,255,255);
+}
+.bd-footer {
+    font-size: .875rem;
+    text-align: center;
+    background-color: rgb(170, 168, 168);
+}
